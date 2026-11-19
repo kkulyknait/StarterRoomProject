@@ -158,3 +158,4 @@ MonoBehaviour:
   impactEffect: {fileID: 5475126718265884187, guid: c90df6536d37509428433e7c1fa12bbf, type: 3}
   sfxEvent: {fileID: 11400000, guid: de13159c2177c1b49b983e979615276e, type: 2}
   impactClip: {fileID: 8300000, guid: 407ddf2e61a914749b47ad4a0299c33c, type: 3}
+  vfxEvent: {fileID: 11400000, guid: 497b965cb07ce3749913b9eea7c91f4f, type: 2}

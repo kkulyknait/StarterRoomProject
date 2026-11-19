@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f142a6dc8c292f47a96507d76027ead, type: 3}
   m_Name: TargetHealth
   m_EditorClassIdentifier: Assembly-CSharp::FloatVariable
-  Value: 1
+  Value: 0

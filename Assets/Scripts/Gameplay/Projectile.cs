@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private GameObject impactEffect;
     [SerializeField] private AudioEvent sfxEvent;
     [SerializeField] private AudioClip impactClip;
+    [SerializeField] private VFXEvent vfxEvent;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,7 +25,7 @@ public class Projectile : MonoBehaviour
         {
             target.TakeDamage(damage, contact.point);
         }
-        Instantiate(impactEffect, contact.point, Quaternion.LookRotation(contact.normal));
+        vfxEvent.Raise(impactEffect, contact.point, Quaternion.LookRotation(contact.normal));
         sfxEvent.Raise(impactClip, contact.point);
         Destroy(gameObject);
     }

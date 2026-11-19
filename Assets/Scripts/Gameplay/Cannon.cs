@@ -12,6 +12,7 @@ public class Cannon : MonoBehaviour
     [SerializeField] private GameEvent firedEvent;
     [SerializeField] private GameObject muzzleEffect;
     [SerializeField] private AudioEvent sfxEvent;
+    [SerializeField] private VFXEvent vfxEvent;
     [SerializeField] private AudioClip fireClip;
 
     private float nextFireTime;
@@ -33,7 +34,7 @@ public class Cannon : MonoBehaviour
 
         Rigidbody ball = Instantiate(ballPrefab, muzzle.position, muzzle.rotation);
         ball.linearVelocity = muzzle.forward * launchSpeed;
-        Instantiate(muzzleEffect, muzzle.position, muzzle.rotation);
+        vfxEvent.Raise(muzzleEffect, muzzle.position, muzzle.rotation);
         sfxEvent.Raise(fireClip, muzzle.position);
         firedEvent.Raise();
     }

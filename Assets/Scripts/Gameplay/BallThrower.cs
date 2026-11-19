@@ -13,6 +13,7 @@ public class BallThrower : MonoBehaviour
     [Header("Feedback")]
     [SerializeField] private GameObject launchEffect;
     [SerializeField] private AudioEvent sfxEvent;
+    [SerializeField] private VFXEvent vfxEvent;
     [SerializeField] private AudioClip launchClip;
 
     private float nextThrowTime;
@@ -34,7 +35,7 @@ public class BallThrower : MonoBehaviour
 
         Rigidbody ball = Instantiate(ballPrefab, launchPoint.position, launchPoint.rotation);
         ball.linearVelocity = launchPoint.forward * launchSpeed;
-        Instantiate(launchEffect, launchPoint.position, launchPoint.rotation);
+        vfxEvent.Raise(launchEffect, launchPoint.position, launchPoint.rotation);
         sfxEvent.Raise(launchClip, launchPoint.position);
     }
 }

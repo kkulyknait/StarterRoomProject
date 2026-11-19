@@ -11,6 +11,7 @@ public class HitTarget : MonoBehaviour, IDamageable
     private void Awake()
     {
         health = maxHealth;
+        if (healthDisplay != null) healthDisplay.Value = 1f;
     }
 
     public void TakeDamage(float amount, Vector3 hitPoint)

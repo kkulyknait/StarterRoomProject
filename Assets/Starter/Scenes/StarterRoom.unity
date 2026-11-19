@@ -228,6 +228,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280539237}
   m_CullTransparentMesh: 1
+--- !u!1 &358689802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 358689803}
+  - component: {fileID: 358689804}
+  - component: {fileID: 358689805}
+  m_Layer: 0
+  m_Name: FeedbackManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &358689803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358689802}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 850885201}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &358689804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358689802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f35f9f644691454eb63ce6d8dfa6429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FeedbackManager
+  vfxEvent: {fileID: 11400000, guid: 497b965cb07ce3749913b9eea7c91f4f, type: 2}
+  impulseSource: {fileID: 358689805}
+--- !u!114 &358689805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358689802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineImpulseSource
+  ImpulseDefinition:
+    ImpulseChannel: 1
+    ImpulseShape: 3
+    CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    ImpulseDuration: 0.2
+    ImpulseType: 0
+    DissipationRate: 0.25
+    RawSignal: {fileID: 0}
+    AmplitudeGain: 1
+    FrequencyGain: 1
+    RepeatMode: 0
+    Randomize: 1
+    TimeEnvelope:
+      AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      AttackTime: 0
+      SustainTime: 0.2
+      DecayTime: 0.7
+      ScaleWithImpact: 1
+      HoldForever: 0
+    ImpactRadius: 100
+    DirectionMode: 0
+    DissipationMode: 2
+    DissipationDistance: 100
+    PropagationSpeed: 343
+  DefaultVelocity: {x: 0, y: -1, z: 0}
 --- !u!1 &534836785
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,6 +584,35 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620322325}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &808922405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6915521898977987126, guid: 872cd21f0563a994f9f6d85fd95b94ca, type: 3}
+  m_PrefabInstance: {fileID: 1045779828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &808922408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808922405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineImpulseListener
+  ApplyAfter: 2
+  ChannelMask: 1
+  Gain: 1
+  Use2DDistance: 0
+  UseCameraSpace: 1
+  SignalCombinationMode: 0
+  ReactionSettings:
+    m_SecondaryNoise: {fileID: 0}
+    AmplitudeGain: 1
+    FrequencyGain: 1
+    Duration: 1
+    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &823984947
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +717,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1396498061}
+  - {fileID: 358689803}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &975448213
@@ -783,7 +913,7 @@ Transform:
   m_GameObject: {fileID: 1030363406}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -34.8, y: 12.349999, z: -0.4}
+  m_LocalPosition: {x: -37.51, y: 17.2, z: 0.21}
   m_LocalScale: {x: 16.666664, y: 16.666668, z: 16.666664}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -846,6 +976,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: de13159c2177c1b49b983e979615276e, type: 2}
     - target: {fileID: 4203145522080072426, guid: 872cd21f0563a994f9f6d85fd95b94ca, type: 3}
+      propertyPath: vfxEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 497b965cb07ce3749913b9eea7c91f4f, type: 2}
+    - target: {fileID: 4203145522080072426, guid: 872cd21f0563a994f9f6d85fd95b94ca, type: 3}
       propertyPath: ballPrefab
       value: 
       objectReference: {fileID: 6008814632616243178, guid: 02fa4b54f1c45b84d93c5080aca0836b, type: 3}
@@ -884,7 +1018,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6915521898977987126, guid: 872cd21f0563a994f9f6d85fd95b94ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 808922408}
   m_SourcePrefab: {fileID: 100100000, guid: 872cd21f0563a994f9f6d85fd95b94ca, type: 3}
 --- !u!4 &1045779829 stripped
 Transform:
@@ -1125,6 +1262,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1239760347}
   - component: {fileID: 1239760348}
+  - component: {fileID: 1239760350}
+  - component: {fileID: 1239760349}
   m_Layer: 5
   m_Name: TargetHealthBar
   m_TagString: Untagged
@@ -1205,6 +1344,48 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1239760349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239760346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dae30cdf94b5854f96318748d232748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthBarUI
+  health: {fileID: 11400000, guid: 5c920a2c3b34a2d4abaee1f27ca072f7, type: 2}
+  slider: {fileID: 1239760348}
+--- !u!114 &1239760350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239760346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0329a1f016fa0449707cc99a755bb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameEventListener
+  Event: {fileID: 11400000, guid: e478819fc170bd04fbc5bbc8c24faef6, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1239760349}
+        m_TargetAssemblyTypeName: HealthBarUI, Assembly-CSharp
+        m_MethodName: Refresh
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1377748211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,7 +1791,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3ec559824c6b24d96157fba513f7fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CannonRecoil
-  recoilOffset: {x: 0, y: 0, z: -1}
+  muzzle: {fileID: 0}
+  recoilDistance: 0.3
   returnTime: 0.35
 --- !u!1 &1630602923
 GameObject:
@@ -1624,6 +1806,7 @@ GameObject:
   - component: {fileID: 1630602927}
   - component: {fileID: 1630602926}
   - component: {fileID: 1630602925}
+  - component: {fileID: 1630602928}
   m_Layer: 0
   m_Name: Target_Cylinder
   m_TagString: Untagged
@@ -1640,8 +1823,8 @@ Transform:
   m_GameObject: {fileID: 1630602923}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.75, z: 6.6}
-  m_LocalScale: {x: 1, y: 0.75, z: 1}
+  m_LocalPosition: {x: -2.32, y: 1.69, z: 6.6}
+  m_LocalScale: {x: 1.822, y: 1.3665, z: 1.822}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 204438714}
@@ -1726,6 +1909,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630602923}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1630602928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630602923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae3c769f3d20b65459e234512d9faf55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitTarget
+  maxHealth: 3
+  healthDisplay: {fileID: 11400000, guid: 5c920a2c3b34a2d4abaee1f27ca072f7, type: 2}
+  damagedEvent: {fileID: 11400000, guid: e478819fc170bd04fbc5bbc8c24faef6, type: 2}
 --- !u!1 &1759348007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2235,6 +2433,7 @@ MonoBehaviour:
   firedEvent: {fileID: 11400000, guid: ed5612206d8512d468c292b8dc53b3cd, type: 2}
   muzzleEffect: {fileID: 5475126718265884187, guid: 58515a899a099414d8bab83f8a45f861, type: 3}
   sfxEvent: {fileID: 11400000, guid: de13159c2177c1b49b983e979615276e, type: 2}
+  vfxEvent: {fileID: 11400000, guid: 497b965cb07ce3749913b9eea7c91f4f, type: 2}
   fireClip: {fileID: 8300000, guid: 407ddf2e61a914749b47ad4a0299c33c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
