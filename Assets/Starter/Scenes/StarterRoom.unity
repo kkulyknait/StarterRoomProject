@@ -1791,7 +1791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3ec559824c6b24d96157fba513f7fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CannonRecoil
-  muzzle: {fileID: 0}
+  muzzle: {fileID: 1030363407}
   recoilDistance: 0.3
   returnTime: 0.35
 --- !u!1 &1630602923

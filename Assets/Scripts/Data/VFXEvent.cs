@@ -8,5 +8,6 @@ public class VFXEvent : ScriptableObject
     public void Raise(GameObject effect, Vector3 position, Quaternion rotation)
     {
         Raised?.Invoke(effect, position, rotation);
+    }
     
 }
