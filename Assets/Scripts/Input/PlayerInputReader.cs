@@ -7,6 +7,7 @@ public class PlayerInputReader : ScriptableObject
 {
     public event Action InteractEvent;
     public event Action FireEvent;
+    public event Action<int> WeaponSelectEvent;
     public Vector2 MoveInput { get; private set; }
     public Vector2 LookInput => _controls.Player.Look.ReadValue<Vector2>();
 
@@ -22,6 +23,9 @@ public class PlayerInputReader : ScriptableObject
         _controls.Player.Move.canceled += HandleMove;
         _controls.Player.Interact.performed += HandleInteract;
         _controls.Player.Attack.performed += HandleFire;
+        _controls.Player.Weapon1.performed += HandleWeapon1;
+        _controls.Player.Weapon2.performed += HandleWeapon2;
+        _controls.Player.Weapon3.performed += HandleWeapon3;
         _controls.Player.Enable();
     }
 
@@ -31,6 +35,9 @@ public class PlayerInputReader : ScriptableObject
         _controls.Player.Move.canceled -= HandleMove;
         _controls.Player.Interact.performed -= HandleInteract;
         _controls.Player.Attack.performed -= HandleFire;
+        _controls.Player.Weapon1.performed -= HandleWeapon1;
+        _controls.Player.Weapon2.performed -= HandleWeapon2;
+        _controls.Player.Weapon3.performed -= HandleWeapon3;
         _controls.Player.Disable();
     }
 
@@ -38,6 +45,7 @@ public class PlayerInputReader : ScriptableObject
     {
         MoveInput = context.ReadValue<Vector2>();
     }
+
 
     private void HandleInteract(InputAction.CallbackContext context)
     {
@@ -48,4 +56,8 @@ public class PlayerInputReader : ScriptableObject
     {
         FireEvent?.Invoke();
     }
+
+    private void HandleWeapon1(InputAction.CallbackContext context) => WeaponSelectEvent?.Invoke(0);
+    private void HandleWeapon2(InputAction.CallbackContext context) => WeaponSelectEvent?.Invoke(1);
+    private void HandleWeapon3(InputAction.CallbackContext context) => WeaponSelectEvent?.Invoke(2);
 }
